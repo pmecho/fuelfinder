@@ -17,8 +17,6 @@ out/
 
 #Gradle
 .gradle
-gradle/*
-gradlew*
 
 #AppEngine
 datanucleus.log
