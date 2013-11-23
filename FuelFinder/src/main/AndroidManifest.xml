@@ -27,7 +27,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAlLV8BJxhTRj7QZ6dPCbCJM5yEsZVGdcI"/>
+            android:value="AIzaSyCG5dpTREuOfZLY-doAzej_inQz7WXJEII"/>
 
         <activity
             android:name="com.smpete.fuelfinder.MapActivity"
