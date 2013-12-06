@@ -1,10 +1,11 @@
-package com.smpete.fuelfinder;
+package com.smpete.fuelfinder.activities;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.smpete.fuelfinder.R;
 import com.smpete.fuelfinder.network.NrelController;
 
 public class MapActivity extends Activity {

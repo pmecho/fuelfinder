@@ -30,7 +30,7 @@
             android:value="AIzaSyCG5dpTREuOfZLY-doAzej_inQz7WXJEII"/>
 
         <activity
-            android:name="com.smpete.fuelfinder.MapActivity"
+            android:name=".maplist.MapListActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

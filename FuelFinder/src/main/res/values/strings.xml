@@ -4,5 +4,6 @@
     <string name="app_name">FuelFinder</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="switch_view">Switch View</string>
 
 </resources>
