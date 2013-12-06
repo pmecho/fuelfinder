@@ -18,7 +18,6 @@ public class MapActivity extends Activity {
         setContentView(R.layout.activity_map);
         mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
-        NrelController.INSTANCE.getNearbyStations();
         NrelController.INSTANCE.getAllStations();
     }
 
