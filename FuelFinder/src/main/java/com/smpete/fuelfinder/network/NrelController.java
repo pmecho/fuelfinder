@@ -49,7 +49,12 @@ public enum NrelController {
                 }
             });
         }
+    }
 
+    public FuelStationResult getAllStationsSynchronous() {
+        // TODO:  Only use local for debugging
+        return mService.listLocalStationsSynchronous(API_KEY, "80218");
+//        return mService.listAllStationsSynchronous(API_KEY);
     }
 
 
@@ -58,9 +63,16 @@ public enum NrelController {
         @GET("/api/alt-fuel-stations/v1.json")
         void listAllStations(@Query("api_key") String apiKey,
                              Callback<FuelStationResult> callback);
+
+        @GET("/api/alt-fuel-stations/v1.json")
+        FuelStationResult listAllStationsSynchronous(@Query("api_key") String apiKey);
+
+        @GET("/api/alt-fuel-stations/v1/nearest.json")
+        FuelStationResult listLocalStationsSynchronous(@Query("api_key") String apiKey,
+                          @Query("location") String locationString);
     }
 
-    private static class FuelStationResult {
+    static class FuelStationResult {
         List<StationModel> fuel_stations;
     }
 }

@@ -1,6 +1,8 @@
 package com.smpete.fuelfinder;
 
 import android.app.Application;
+import android.content.Intent;
+import com.smpete.fuelfinder.network.FetchStationsService;
 import com.smpete.fuelfinder.network.NrelController;
 
 public class FuelFinderApplication extends Application {
@@ -10,6 +12,6 @@ public class FuelFinderApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        NrelController.INSTANCE.getAllStations();
+        startService(new Intent(this, FetchStationsService.class));
     }
 }
