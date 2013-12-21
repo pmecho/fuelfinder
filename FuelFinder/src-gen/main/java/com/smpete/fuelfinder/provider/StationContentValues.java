@@ -7,6 +7,10 @@ import java.util.Date;
  */
 public class StationContentValues extends AbstractContentValuesWrapper {
 
+    public void putId(int value) {
+        mContentValues.put(StationColumns._ID, value);
+    }
+
     public void putName(String value) {
         mContentValues.put(StationColumns.NAME, value);
     }

@@ -21,11 +21,10 @@ public class FetchStationsService extends IntentService {
         NrelController.FuelStationResult stationResult = NrelController.INSTANCE.getAllStationsSynchronous();
         List<StationModel> stationModels = stationResult.fuel_stations;
 
-
-        // TODO add ID
         StationContentValues stationContentValues;
         for (StationModel stationModel : stationModels) {
             stationContentValues = new StationContentValues();
+            stationContentValues.putId(stationModel.getId());
             stationContentValues.putName(stationModel.getName());
             stationContentValues.putAddress(stationModel.getStreetAddress());
             stationContentValues.putCity(stationModel.getCity());
