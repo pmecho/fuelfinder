@@ -3,8 +3,8 @@ package com.smpete.fuelfinder.network;
 import android.app.IntentService;
 import android.content.Intent;
 import com.smpete.fuelfinder.data.StationModel;
-import com.smpete.fuelfinder.provider.StationColumns;
-import com.smpete.fuelfinder.provider.StationContentValues;
+import com.smpete.fuelfinder.data.provider.StationColumns;
+import com.smpete.fuelfinder.data.provider.StationContentValues;
 
 import java.util.List;
 

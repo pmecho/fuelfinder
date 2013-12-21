@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
 
-        <provider android:name=".provider.StationProvider"
+        <provider android:name=".data.provider.StationProvider"
             android:authorities="com.smpete.fuelfinder.provider"
             android:exported="false">
             <grant-uri-permission android:pathPattern=".*" />

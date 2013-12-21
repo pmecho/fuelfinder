@@ -1,13 +1,10 @@
-package com.smpete.fuelfinder.provider;
+package com.smpete.fuelfinder.data.provider;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-/**
- * Columns for the {@code station} table.
- */
 public class StationColumns implements BaseColumns {
-    public static final String TABLE_NAME = "station";
+    public static final String TABLE_NAME = "stations";
     public static final Uri CONTENT_URI = Uri.parse(StationProvider.CONTENT_URI_BASE + "/" + TABLE_NAME);
 
     public static final String _ID = BaseColumns._ID;

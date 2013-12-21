@@ -12,15 +12,6 @@ android {
         minSdkVersion 14
         targetSdkVersion 19
     }
-
-    sourceSets {
-        main {
-            java {
-                srcDir 'src/main/java'
-                srcDir 'src-gen/main/java'
-            }
-        }
-    }
 }
 
 dependencies {
