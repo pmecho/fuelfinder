@@ -41,7 +41,7 @@ public class FetchStationsService extends IntentService {
                 stationContentValues.putUpdatedAt(stationModel.getUpdatedAt());
             }
 
-            getContentResolver().update(StationColumns.CONTENT_URI, stationContentValues.getContentValues(), null, null);
+            getContentResolver().insert(StationColumns.CONTENT_URI, stationContentValues.getContentValues());
         }
     }
 }
