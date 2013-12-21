@@ -53,7 +53,7 @@ public enum NrelController {
 
     public FuelStationResult getAllStationsSynchronous() {
         // TODO:  Only use local for debugging
-        return mService.listLocalStationsSynchronous(API_KEY, "80218");
+        return mService.listLocalStationsSynchronous(API_KEY, "80218", 50, 100);
 //        return mService.listAllStationsSynchronous(API_KEY);
     }
 
@@ -69,7 +69,7 @@ public enum NrelController {
 
         @GET("/api/alt-fuel-stations/v1/nearest.json")
         FuelStationResult listLocalStationsSynchronous(@Query("api_key") String apiKey,
-                          @Query("location") String locationString);
+                          @Query("location") String locationString, @Query("radius") double radius, @Query("limit") int limit);
     }
 
     static class FuelStationResult {
