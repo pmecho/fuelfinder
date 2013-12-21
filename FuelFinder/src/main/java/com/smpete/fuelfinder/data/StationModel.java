@@ -16,7 +16,7 @@ public class StationModel {
     String station_phone;
     String access_days_time;
     String geocode_status;
-    String fuel_type;
+    String fuel_type_code;
     float latitude;
     float longitude;
     Date updated_at;
@@ -57,8 +57,8 @@ public class StationModel {
         return geocode_status;
     }
 
-    public String getFuelType() {
-        return fuel_type;
+    public String getFuelTypes() {
+        return fuel_type_code;
     }
 
     public float getLatitude() {

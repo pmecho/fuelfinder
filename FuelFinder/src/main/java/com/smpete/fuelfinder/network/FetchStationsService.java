@@ -1,6 +1,7 @@
 package com.smpete.fuelfinder.network;
 
 import android.app.IntentService;
+import android.content.ContentValues;
 import android.content.Intent;
 import com.smpete.fuelfinder.data.StationModel;
 import com.smpete.fuelfinder.data.provider.StationColumns;
@@ -21,26 +22,30 @@ public class FetchStationsService extends IntentService {
         NrelController.FuelStationResult stationResult = NrelController.INSTANCE.getAllStationsSynchronous();
         List<StationModel> stationModels = stationResult.fuel_stations;
 
-        StationContentValues stationContentValues;
-        for (StationModel stationModel : stationModels) {
-            stationContentValues = new StationContentValues();
-            stationContentValues.putId(stationModel.getId());
-            stationContentValues.putName(stationModel.getName());
-            stationContentValues.putAddress(stationModel.getStreetAddress());
-            stationContentValues.putCity(stationModel.getCity());
-            stationContentValues.putState(stationModel.getState());
-            stationContentValues.putZip(stationModel.getZip());
-            stationContentValues.putPhone(stationModel.getPhone());
-            stationContentValues.putAccessTime(stationModel.getAccessDaysTime());
-            stationContentValues.putGeocodeStatus(stationModel.getGeocodeStatus());
-            stationContentValues.putFuelType(stationModel.getFuelType());
-            stationContentValues.putLatitude((double) stationModel.getLatitude());
-            stationContentValues.putLongitude((double) stationModel.getLongitude());
+        ContentValues stationContentValues[] = new ContentValues[stationModels.size()];
+        StationModel stationModel;
+        StationContentValues value;
+        for (int i = 0; i < stationModels.size(); i++) {
+            stationModel = stationModels.get(i);
+            value = new StationContentValues();
+            value.putId(stationModel.getId());
+            value.putName(stationModel.getName());
+            value.putAddress(stationModel.getStreetAddress());
+            value.putCity(stationModel.getCity());
+            value.putState(stationModel.getState());
+            value.putZip(stationModel.getZip());
+            value.putPhone(stationModel.getPhone());
+            value.putAccessTime(stationModel.getAccessDaysTime());
+            value.putGeocodeStatus(stationModel.getGeocodeStatus());
+            value.putFuelTypes(stationModel.getFuelTypes());
+            value.putLatitude((double) stationModel.getLatitude());
+            value.putLongitude((double) stationModel.getLongitude());
             if (stationModel.getUpdatedAt() != null) {
-                stationContentValues.putUpdatedAt(stationModel.getUpdatedAt());
+                value.putUpdatedAt(stationModel.getUpdatedAt());
             }
 
-            getContentResolver().insert(StationColumns.CONTENT_URI, stationContentValues.getContentValues());
+            stationContentValues[i] = value.getContentValues();
         }
+        getContentResolver().bulkInsert(StationColumns.CONTENT_URI, stationContentValues);
     }
 }

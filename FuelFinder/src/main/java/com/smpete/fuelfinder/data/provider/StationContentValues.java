@@ -48,8 +48,8 @@ public class StationContentValues {
         mContentValues.put(StationColumns.GEOCODE_STATUS, value);
     }
 
-    public void putFuelType(String value) {
-        mContentValues.put(StationColumns.FUEL_TYPE, value);
+    public void putFuelTypes(String value) {
+        mContentValues.put(StationColumns.FUEL_TYPES, value);
     }
 
     public void putLatitude(Double value) {

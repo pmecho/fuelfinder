@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + StationColumns.PHONE + " TEXT, "
             + StationColumns.ACCESS_TIME + " TEXT, "
             + StationColumns.GEOCODE_STATUS + " TEXT, "
-            + StationColumns.FUEL_TYPE + " TEXT, "
+            + StationColumns.FUEL_TYPES + " TEXT, "
             + StationColumns.LATITUDE + " FLOAT, "
             + StationColumns.LONGITUDE + " FLOAT, "
             + StationColumns.UPDATED_AT + " INTEGER "

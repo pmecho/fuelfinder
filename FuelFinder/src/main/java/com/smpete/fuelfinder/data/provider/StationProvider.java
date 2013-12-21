@@ -59,6 +59,12 @@ public class StationProvider extends ContentProvider {
         return null;
     }
 
+    /**
+     * Performs a replace
+     * @param uri
+     * @param values
+     * @return
+     */
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         if (Constants.ENABLE_LOGGING) {
@@ -73,6 +79,12 @@ public class StationProvider extends ContentProvider {
         return uri.buildUpon().appendEncodedPath(String.valueOf(rowId)).build();
     }
 
+    /**
+     * Performs a replace
+     * @param uri
+     * @param values
+     * @return
+     */
     @Override
     public int bulkInsert(Uri uri, ContentValues[] values) {
         if (Constants.ENABLE_LOGGING) {
@@ -84,7 +96,7 @@ public class StationProvider extends ContentProvider {
         db.beginTransaction();
         try {
             for (final ContentValues v : values) {
-                final long id = db.insert(table, null, v);
+                final long id = db.replace(table, null, v);
                 if (id != -1) {
                     res++;
                 }

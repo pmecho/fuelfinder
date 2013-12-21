@@ -17,7 +17,7 @@ public class StationColumns implements BaseColumns {
     public static final String PHONE = "phone";
     public static final String ACCESS_TIME = "access_time";
     public static final String GEOCODE_STATUS = "geocode_status";
-    public static final String FUEL_TYPE = "fuel_type";
+    public static final String FUEL_TYPES = "fuel_types";
     public static final String LATITUDE = "latitude";
     public static final String LONGITUDE = "longitude";
     public static final String UPDATED_AT = "updated_at";
