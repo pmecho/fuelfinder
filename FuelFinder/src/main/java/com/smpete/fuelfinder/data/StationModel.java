@@ -1,7 +1,5 @@
 package com.smpete.fuelfinder.data;
 
-import android.provider.BaseColumns;
-
 import java.util.Date;
 
 public class StationModel {
