@@ -74,26 +74,4 @@ public class StationModel {
     public Date getUpdatedAt() {
         return updated_at;
     }
-
-
-    // Column definitions
-    public static class StationColumns implements BaseColumns {
-
-        public static final String TABLE_NAME = "stations";
-
-        public static final String COLUMN_NAME_NAME = "name";
-        public static final String COLUMN_NAME_ADDRESS = "address";
-        public static final String COLUMN_NAME_CITY = "city";
-        public static final String COLUMN_NAME_STATE = "state";
-        public static final String COLUMN_NAME_ZIP = "zip";
-        public static final String COLUMN_NAME_PHONE = "phone";
-        public static final String COLUMN_NAME_ACCESS_TIMES = "access_times";
-        public static final String COLUMN_NAME_GEOCODE_STATUS = "geocode_status";
-        public static final String COLUMN_NAME_FUEL_TYPES = "fuel_types";
-        public static final String COLUMN_NAME_LATITUDE = "latitude";
-        public static final String COLUMN_NAME_LONGITUDE = "longitude";
-        public static final String COLUMN_NAME_UPDATED_AT = "updated_at";
-
-        private StationColumns() {}
-    }
 }
