@@ -63,7 +63,7 @@ public class StationProvider extends ContentProvider {
     public Uri insert(Uri uri, ContentValues values) {
         if (Constants.LOGD_PROVIDER) Log.d(TAG, "insert uri=" + uri + " values=" + values);
         final String table = uri.getLastPathSegment();
-        final long rowId = mDatabaseHelper.getWritableDatabase().insert(table, null, values);
+        final long rowId = mDatabaseHelper.getWritableDatabase().replace(table, null, values);
         String notify;
         if (rowId != -1 && ((notify = uri.getQueryParameter(QUERY_NOTIFY)) == null || "true".equals(notify))) {
             getContext().getContentResolver().notifyChange(uri, null);
